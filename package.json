@@ -17,8 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test:watch": "react-scripts test",
-    "test:coverage": "cross-env CI=true react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "test:coverage": "cross-env CI=true react-scripts test --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
