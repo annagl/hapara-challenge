@@ -1,13 +1,15 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
-import Teacher from '../routes/Teacher/Teacher';
-import Student from '../routes/Student/Student';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import NotFound from '../routes/NotFound/NotFound';
+import Classes from '../routes/Classes/Classes';
 
 const App = () => {
     return (
         <Router>
-            <Route exact path="/" component={Teacher}/>
-            <Route path="/student" component={Student}/>
+            <Switch>
+                <Route exact path="/" component={Classes}/>
+                <Route component={NotFound}/>
+            </Switch>
         </Router>
     );
 };

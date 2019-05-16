@@ -14,7 +14,7 @@ const TopNav = (props) => {
                 <li className="top-nav__item" key={key}>
                     <Link
                         to={item.to}
-                        className={`top-nav__item__link ${item.isHighlighted ? 'top-nav__item__link--highlighted' : ''}`}
+                        className={`top-nav__item__link ${item.isActive ? 'top-nav__item__link--active' : ''}`}
                     >
                         {item.name}
                     </Link>
@@ -28,7 +28,7 @@ TopNav.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
         to: PropTypes.string.isRequired,
-        isHighlighted: PropTypes.bool,
+        isActive: PropTypes.bool,
     })),
 };
 

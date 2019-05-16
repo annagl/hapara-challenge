@@ -15,9 +15,9 @@ class RightNav extends Component {
     }
 
     render() {
-        const {toggle, items} = this.props;
+        const {toggle, items, onToggle} = this.props;
 
-        if (!toggle || !toggle.currentName) return null;
+        if (!toggle) return null;
 
         return (
             <div className="right-nav">
@@ -28,15 +28,21 @@ class RightNav extends Component {
                     aria-expanded={this.state.isDropdownOpen}
                     onClick={() => this.setState(prevState => ({isDropdownOpen: !prevState.isDropdownOpen}))}
                 >
-                    <span className="right-nav__toggle__name">{toggle.currentName}</span>
+                    <span className="right-nav__toggle__name">{toggle.current}</span>
                     <img src={this.state.isDropdownOpen? iconArrowUp : iconArrowDown} className="right-nav__toggle__img" alt="arrow" />
                 </button>
 
                 {this.state.isDropdownOpen && (
                     <div className="right-nav__dropdown" id="right-nav-dropdown">
-                        <Link to={toggle.to} className="right-nav__dropdown__toggle">
-                            {toggle.name}
-                        </Link>
+                        <button
+                            className="right-nav__dropdown__toggle"
+                            onClick={() => {
+                                onToggle();
+                                this.setState(prevState => ({isDropdownOpen: !prevState.isDropdownOpen}));
+                            }}
+                        >
+                            {toggle.alt}
+                        </button>
 
                         <ul className="right-nav__dropdown__list">
                             {items.map((item, key) => (
@@ -59,14 +65,14 @@ class RightNav extends Component {
 
 RightNav.propTypes = {
     toggle: PropTypes.shape({
-        currentName: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        to: PropTypes.string.isRequired,
+        current: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
     }).isRequired,
     items: PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string.isRequired,
         to: PropTypes.string.isRequired,
     })),
+    onToggle: PropTypes.func.isRequired,
 };
 
 RightNav.defaultProps = {
