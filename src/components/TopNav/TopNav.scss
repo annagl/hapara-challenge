@@ -1,0 +1,40 @@
+@import "../../assets/styles/variables";
+
+.top-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &__link {
+            color: $light-grey;
+            font-size: 12px;
+            text-decoration: none;
+            font-weight: $font-weight-semibold;
+            line-height: 20px;
+            display: block;
+            padding: 0 7px;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $white;
+                text-decoration: none;
+            }
+
+            &--highlighted {
+                color: $white;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $light-grey;
+                }
+            }
+        }
+    }
+}

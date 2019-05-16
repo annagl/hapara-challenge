@@ -1,32 +1,32 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Header from '../Header/Header';
+import Header from "../../Header/Header";
+import TopNav from "../../TopNav/TopNav";
 
-const Teacher = () => {
+const Student = () => {
     const topNav = [{
         name: 'Classes',
         to: '/classes',
         isHighlighted: true,
     },{
-        name: 'Lessons',
-        to: '/lessons',
-    },{
-        name: 'Libraries',
-        to: '/libraries',
+        name: 'Assignments',
+        to: '/assignments',
     }];
 
     return (
         <React.Fragment>
-            <Header topNav={topNav} />
-            <h1>Teacher</h1>
+            <Header>
+                <TopNav items={topNav} />
+            </Header>
+            <h1>Student</h1>
         </React.Fragment>
     );
 };
 
-Teacher.propTypes = {
+Student.propTypes = {
     history: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
 };
 
-export default Teacher;
+export default Student;
