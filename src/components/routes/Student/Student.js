@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Header from "../../Header/Header";
 import TopNav from "../../TopNav/TopNav";
+import RightNav from "../../RightNav/RightNav";
 
 const Student = () => {
     const topNav = [{
@@ -13,12 +14,26 @@ const Student = () => {
         to: '/assignments',
     }];
 
+    const rightNavItems = [{
+        name: 'Settings',
+        to: '/settings',
+    },{
+        name: 'Sign Out',
+        to: '/sign-out',
+    }];
+
+    const rightNavToggle = {
+        currentName: 'student@school.org',
+        name: 'teacher@school.org',
+        to: '/',
+    };
+
     return (
         <React.Fragment>
             <Header>
                 <TopNav items={topNav} />
+                <RightNav items={rightNavItems} toggle={rightNavToggle} />
             </Header>
-            <h1>Student</h1>
         </React.Fragment>
     );
 };

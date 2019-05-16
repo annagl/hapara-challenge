@@ -10,9 +10,7 @@ const Header = (props) => {
             <a href="/" className="header__logo">
                 <img src={logo} className="header__logo__img" alt="logo" />
             </a>
-            <div className="navigation">
-                {children}
-            </div>
+            {children}
         </header>
     );
 };

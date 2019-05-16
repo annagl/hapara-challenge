@@ -33,7 +33,7 @@ TopNav.propTypes = {
 };
 
 TopNav.defaultProps = {
-    topNav: [],
+    items: [],
 };
 
 export default TopNav;
