@@ -1,0 +1,68 @@
+@import "../../assets/styles/variables";
+
+.header {
+    background: $black;
+    width: 100%;
+    display: flex;
+    padding: 15px 20px;
+
+    &__logo {
+        margin: 0 10px 0 0;
+        &:hover,
+        &:active,
+        &:focus {
+            opacity: 0.5;
+        }
+
+        &__img {
+            width: 20px;
+            display: block;
+        }
+    }
+}
+
+.navigation {
+    display: block;
+}
+@media only screen and (min-width: 576px) {
+}
+
+.top-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &__link {
+            color: $light-grey;
+            font-size: 12px;
+            text-decoration: none;
+            font-weight: $font-weight-semibold;
+            line-height: 20px;
+            display: block;
+            padding: 0 7px;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $white;
+                text-decoration: none;
+            }
+
+            &--highlighted {
+                color: $white;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $light-grey;
+                }
+            }
+        }
+    }
+}
+
